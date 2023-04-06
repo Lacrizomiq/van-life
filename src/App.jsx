@@ -26,7 +26,6 @@ function App() {
         <Route path='/host' element={<Dashboard />} />
         <Route path='/host/income' element={<Income />} />
         <Route path='/host/reviews' element={<Reviews />} />
-
       </Route>
     </Routes>
   </BrowserRouter>
