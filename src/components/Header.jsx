@@ -11,6 +11,7 @@ export default function Header() {
         <nav>
             <NavLink to="/about" isActive={() => location.pathname === '/about'}>About</NavLink>
             <NavLink to="/vans" isActive={() => location.pathname === '/vans'}>Vans</NavLink>
+            <NavLink to="/host">Host</NavLink>
         </nav>
     </header>
     )
