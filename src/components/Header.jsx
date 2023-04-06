@@ -1,17 +1,15 @@
 import React from "react";
-import { useLocation, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Header() {
 
-    const location = useLocation()
-
     return (
     <header>
-        <NavLink className="site-logo" to="/" isActive={() => location.pathname === '/'}>#VanLife</NavLink>
+        <Link className="site-logo" to="/">#VanLife</Link>
         <nav>
-            <NavLink to="/about" isActive={() => location.pathname === '/about'}>About</NavLink>
-            <NavLink to="/vans" isActive={() => location.pathname === '/vans'}>Vans</NavLink>
-            <NavLink to="/host">Host</NavLink>
+            <Link to="/about">About</Link>
+            <Link to="/vans" >Vans</Link>
+            <Link to="/host">Host</Link>
         </nav>
     </header>
     )
