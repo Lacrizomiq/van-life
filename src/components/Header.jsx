@@ -10,9 +10,15 @@ export default function Header() {
     }
 
     return (
-    <header>
+        <header>
         <Link className="site-logo" to="/">#VanLife</Link>
         <nav>
+            <NavLink 
+                to="/host"
+                style={({isActive}) => isActive ? activeStyle : null}
+            >
+                Host
+            </NavLink>
             <NavLink 
                 to="/about"
                 style={({isActive}) => isActive ? activeStyle : null}
@@ -20,16 +26,10 @@ export default function Header() {
                 About
             </NavLink>
             <NavLink 
-                to="/vans" 
+                to="/vans"
                 style={({isActive}) => isActive ? activeStyle : null}
             >
                 Vans
-            </NavLink>
-            <NavLink 
-                to="/host"
-                style={({isActive}) => isActive ? activeStyle : null}
-            >
-                Host
             </NavLink>
         </nav>
     </header>
