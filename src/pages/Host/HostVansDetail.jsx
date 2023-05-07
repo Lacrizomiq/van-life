@@ -5,6 +5,7 @@ import { useParams, Link, Outlet, NavLink } from "react-router-dom"
 export default function HostVanDetail() {
     const { id } = useParams()
     const [currentVan, setCurrentVan] = React.useState(null)
+    
     const activeStyle = {
         fontWeight: 'bold',
         textDecoration: 'underline', 
@@ -46,12 +47,27 @@ export default function HostVanDetail() {
                 </div>
 
                 <nav className="host-van-detail-nav">
-                <NavLink to="." end style={({isActive}) => isActive ? activeStyle : null}>Details</NavLink>
-                <NavLink to="pricing" style={({isActive}) => isActive ? activeStyle : null} >Pricing</NavLink>
-                <NavLink to="photos" style={({isActive}) => isActive ? activeStyle : null}>Photos</NavLink>
+                    <NavLink 
+                        to="." 
+                        end 
+                        style={({isActive}) => isActive ? activeStyle : null}
+                    >
+                        Details
+                    </NavLink>
+                    <NavLink 
+                        to="pricing" 
+                        style={({isActive}) => isActive ? activeStyle : null} 
+                    >Pricing
+                    </NavLink>
+                    <NavLink 
+                        to="photos"
+                        style={({isActive}) => isActive ? activeStyle : null}
+                    >
+                        Photos
+                    </NavLink>
                 </nav>
 
-                <Outlet />
+                <Outlet context={[currentVan, setCurrentVan]}/>
             </div>
         </section>
     )
