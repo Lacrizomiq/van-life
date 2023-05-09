@@ -16,7 +16,19 @@ function Vans(props) {
             .then(data => setVans(data.vans))
     }, [])
 
-    const vanElements = vans.map(van => (
+    const filteredVans = vans.filter(van => {
+        if(typeFilter === "simple") {
+            return van.type === "simple"
+        } else if (typeFilter === "luxury") {
+            return van.type === "luxury"
+        } else if (typeFilter === "rugged") {
+            return van.type === "rugged"
+        } else {
+            return true
+        }
+    })
+
+    const vanElements = filteredVans.map(van => (
         <div key={van.id} className="van-tile">
             <Link to={`/vans/${van.id}`}>
             <img src={van.imageUrl} />
