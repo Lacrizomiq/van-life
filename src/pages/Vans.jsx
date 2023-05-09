@@ -16,17 +16,9 @@ function Vans(props) {
             .then(data => setVans(data.vans))
     }, [])
 
-    const filteredVans = vans.filter(van => {
-        if(typeFilter === "simple") {
-            return van.type === "simple"
-        } else if (typeFilter === "luxury") {
-            return van.type === "luxury"
-        } else if (typeFilter === "rugged") {
-            return van.type === "rugged"
-        } else {
-            return true
-        }
-    })
+    const filteredVans = typeFilter 
+    ? vans.filter(van => van.type === typeFilter)
+    : vans
 
     const vanElements = filteredVans.map(van => (
         <div key={van.id} className="van-tile">
