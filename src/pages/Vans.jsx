@@ -40,12 +40,11 @@ function Vans(props) {
     return (
         <div className="van-list-container">
             <h1>Explore our van options</h1>
-            <div>
-            <Link to="/vans">All Vans</Link> 
-            <Link to="/vans?type=simple">Simple Van</Link> 
-            <Link to="/vans?type=luxury">Luxury Van</Link> 
-            <Link to="/vans?type=rugged">Rugged Van</Link> 
-            <button onClick={clearFilter}>Clear filter</button>
+            <div className="van-list-filter-buttons">
+            <Link to="/vans?type=simple" className="van-type simple">Simple Van</Link> 
+            <Link to="/vans?type=luxury" className="van-type luxury">Luxury Van</Link> 
+            <Link to="/vans?type=rugged" className="van-type rugged">Rugged Van</Link> 
+            <button onClick={clearFilter} className="van-type clear-filters">Clear filter</button>
           </div>
             <div className="van-list">
                 {vanElements}
