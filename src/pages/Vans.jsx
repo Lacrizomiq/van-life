@@ -20,10 +20,6 @@ function Vans(props) {
     ? vans.filter(van => van.type === typeFilter)
     : vans
 
-    const clearFilter = () => {
-        setSearchParams(searchParams.delete('type'))
-    }
-
     const vanElements = filteredVans.map(van => (
         <div key={van.id} className="van-tile">
             <Link to={`/vans/${van.id}`}>
@@ -41,10 +37,29 @@ function Vans(props) {
         <div className="van-list-container">
             <h1>Explore our van options</h1>
             <div className="van-list-filter-buttons">
-            <Link to="/vans?type=simple" className="van-type simple">Simple Van</Link> 
-            <Link to="/vans?type=luxury" className="van-type luxury">Luxury Van</Link> 
-            <Link to="/vans?type=rugged" className="van-type rugged">Rugged Van</Link> 
-            <button onClick={clearFilter} className="van-type clear-filters">Clear filter</button>
+            <button 
+                onClick={() => setSearchParams({type : "simple"})} 
+                className="van-type simple"
+            >
+                Simple Van
+            </button> 
+            <button 
+                onClick={() => setSearchParams({type : "luxury"})} 
+                className="van-type luxury"
+            >
+                Luxury Van
+            </button> 
+            <button 
+                onClick={() => setSearchParams({type : "rugged"})} 
+                className="van-type rugged"
+            >
+                Rugged Van</button> 
+            <button 
+                onClick={() => setSearchParams(searchParams.delete('type'))} 
+                className="van-type clear-filters"
+            >
+                Clear filter
+            </button>
           </div>
             <div className="van-list">
                 {vanElements}
