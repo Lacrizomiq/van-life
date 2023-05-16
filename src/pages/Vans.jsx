@@ -39,13 +39,13 @@ function Vans(props) {
             <div className="van-list-filter-buttons">
             <button 
                 onClick={() => setSearchParams({type : "simple"})} 
-                className="van-type simple"
+                className={`van-type simple ${typeFilter === 'simple' ? "selected" : ""}`}
             >
                 Simple Van
             </button> 
             <button 
                 onClick={() => setSearchParams({type : "luxury"})} 
-                className="van-type luxury"
+                className={`van-type luxury ${typeFilter === 'luxury' ? "selected" : ""}`}
             >
                 Luxury Van
             </button> 
