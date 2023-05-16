@@ -146,7 +146,7 @@ footer {
 
 /*** ABOUT PAGE ***/
 .about-hero-image {
-    max-width: 100%;
+    min-width: 100%;
 }
 
 .about-page-content {
