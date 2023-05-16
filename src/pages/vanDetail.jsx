@@ -14,7 +14,10 @@ export default function VanDetail() {
             })
     }, [params.id])
 
+    /* const to get back to the previous filtered search in the link */
     const search = location.state?.search || ""
+
+    /* const to change the text of the button if a filter was applied */
     const type = location.state?.type || "all"
     
     return (
