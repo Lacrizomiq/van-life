@@ -54,12 +54,13 @@ function Vans(props) {
                 className="van-type rugged"
             >
                 Rugged Van</button> 
+            {searchParams.has("type") &&
             <button 
                 onClick={() => setSearchParams(searchParams.delete('type'))} 
                 className="van-type clear-filters"
             >
                 Clear filter
-            </button>
+            </button>}
           </div>
             <div className="van-list">
                 {vanElements}
