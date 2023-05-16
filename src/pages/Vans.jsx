@@ -51,7 +51,7 @@ function Vans(props) {
             </button> 
             <button 
                 onClick={() => setSearchParams({type : "rugged"})} 
-                className="van-type rugged"
+                className={`van-type rugged ${typeFilter === 'rugged' ? "selected" : ""}`}
             >
                 Rugged Van</button> 
             {searchParams.has("type") &&
