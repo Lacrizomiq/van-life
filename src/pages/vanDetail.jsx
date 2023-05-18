@@ -22,14 +22,14 @@ export default function VanDetail() {
     
     return (
        <div className="van-detail-container">
+            <Link
+                to={`..${search}`}
+                relative="path"
+                className="back-button"
+            >&larr; <span>Back to {type} vans</span></Link>
+
             {van ? (
-                
             <div className="van-detail">
-                <Link
-                    to={`..${search}`}
-                    relative="path"
-                    className="back-button"
-                >&larr; <span>Back to {type} vans</span></Link>
                 <img src={van.imageUrl} />
                 <i className={`van-type ${van.type} selected`}>{van.type}</i>
                 <h2>{van.name}</h2>
