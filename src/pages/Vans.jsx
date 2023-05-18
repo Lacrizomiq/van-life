@@ -7,14 +7,17 @@ function Vans(props) {
 
     const [vans, setVans] = useState([])
     const [searchParams, setSearchParams] = useSearchParams()
+    const [loading, setLoading] = useState(false)
 
     const typeFilter = searchParams.get('type')
     console.log(typeFilter)
 
     useEffect(() => {
         async function loadVans() {
+            setLoading(true)
             const data = await getVans()
             setVans(data)
+            setLoading(false)
         }
         loadVans()
     }, [])
@@ -35,6 +38,10 @@ function Vans(props) {
             </Link>
         </div>
     ))
+
+    if (loading) {
+        return <h1>Loading ...</h1>
+    }
 
     return (
         <div className="van-list-container">
