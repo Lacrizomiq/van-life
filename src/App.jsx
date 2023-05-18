@@ -24,7 +24,7 @@ import HostVanInfo from './pages/Host/HostVanInfo'
 import HostVanPhotos from './pages/Host/HostVanPhotos'
 import HostVanPricing from './pages/Host/HostVanPricing'
 
-
+/* New routers from v6.4 Data APIs */
 const router = createBrowserRouter(createRoutesFromElements(
   <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
