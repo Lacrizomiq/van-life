@@ -28,14 +28,13 @@ import Error from './components/Error'
 
 /* New routers from v6.4 Data APIs */
 const router = createBrowserRouter(createRoutesFromElements(
-  <Route path="/" element={<Layout />}>
+  <Route path="/" element={<Layout />} errorElement={<Error />}>
         <Route index element={<Home />} />
         <Route path="about" element={<About />} />
         <Route 
           path='vans' 
           element={<Vans />} 
           loader={vansLoader}
-          errorElement={<Error />}
           />
           
         <Route path='vans/:id' element={<VanDetail />} />
