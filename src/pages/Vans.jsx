@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
-import { Link, useSearchParams } from "react-router-dom";
+import { Link, useLoaderData, useSearchParams } from "react-router-dom";
 import { getVans } from "../api";
+
+export function loader() {
+    return getVans()
+}
 
 function Vans(props) {
 
@@ -9,6 +13,7 @@ function Vans(props) {
     const [searchParams, setSearchParams] = useSearchParams()
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState(null)
+    const data = useLoaderData()
 
     const typeFilter = searchParams.get('type')
     console.log(typeFilter)
