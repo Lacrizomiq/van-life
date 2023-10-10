@@ -1,7 +1,7 @@
 
 function Income() {
     return (
-        <h1>Hola amigo to the income page</h1>
+        <h1>Income page</h1>
     )
 }
 
